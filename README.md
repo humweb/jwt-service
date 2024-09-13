@@ -59,6 +59,10 @@ router.Get("/admin", func(w http.ResponseWriter, r *http.Request) {
     fmt.Println(claims["userId"])
 })
 ```
+## Credits
+JWT Service uses mainly these packages:
+* https://github.com/lestrrat-go/jwx
+* https://github.com/go-chi/jwtauth
 
 ## Contributing
 
