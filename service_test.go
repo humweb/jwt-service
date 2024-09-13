@@ -23,6 +23,16 @@ func (suite *ServiceTestSuite) TestServiceGetters() {
 	suite.Contains(reflect.ValueOf(service.Auth()).String(), "jwtauth.JWTAuth")
 
 }
+
+func (suite *ServiceTestSuite) TestSClaimsError() {
+	service := New("123")
+	var exp interface{}
+	token, err := service.GenerateToken(Claims{"aud": exp})
+
+	suite.Equal("", token)
+	suite.NotNil(err)
+}
+
 func (suite *ServiceTestSuite) TestWithNoToken() {
 
 	_, _, ts := createService()
