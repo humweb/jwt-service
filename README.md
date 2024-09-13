@@ -16,6 +16,49 @@
 ## Description
 
 This is a GO JWT service that provides a standardized way to generate, verify, and authenticate JWT.
+## Create Service
+You can initialize the service with just a secret in this case `123`.
+By default the token expires in 24 hours
+```go
+service := jwtservice.New("123")
+```
+
+You can also override options like expiration `WithExpiration(exp time.Duration)`
+```go
+service := jwtservice.New("123", WithExpiration(12 * time.Hour))
+```
+
+
+## Generate Token
+```go
+service := jwtservice.New("123")
+token, err := service.GenerateToken(jwtservice.Claims{"userId": 1})
+```
+
+## Middleware Usage
+```go
+service := jwtservice.New("123")
+
+r := chi.NewRouter()
+
+service.ApplyMiddleware(r)
+```
+
+## Get Claims
+```go
+service := jwtservice.New("123")
+token, err := service.GenerateToken(jwtservice.Claims{"userId": 1})
+
+router := chi.NewRouter()
+
+service.ApplyMiddleware(router)
+
+router.Get("/admin", func(w http.ResponseWriter, r *http.Request) {
+    claims, err := service.ClaimsFromRequest(r)
+    
+    fmt.Println(claims["userId"])
+})
+```
 
 ## Contributing
 
