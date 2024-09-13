@@ -114,6 +114,32 @@ func (suite *ServiceTestSuite) TestOverrideOption() {
 	suite.Equal("welcome", resp)
 }
 
+func (suite *ServiceTestSuite) TestExpiredKey() {
+	service := New("123", WithExpiration(-24*time.Hour))
+	r := chi.NewRouter()
+
+	service.ApplyMiddleware(r)
+
+	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("welcome"))
+	})
+
+	ts := httptest.NewServer(r)
+
+	defer ts.Close()
+
+	token, err := service.GenerateToken(Claims{})
+
+	suite.Nil(err)
+
+	h := http.Header{}
+	h.Set("Authorization", "BEARER "+token)
+	status, resp := testRequest(ts, "GET", "/", h, nil)
+
+	suite.Equal(401, status)
+	suite.Equal("token is expired\n", resp)
+}
+
 func TestServiceSuite(t *testing.T) {
 	suite.Run(t, new(ServiceTestSuite))
 }
