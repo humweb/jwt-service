@@ -42,7 +42,7 @@ func (suite *ServiceTestSuite) TestWithWrongKey() {
 	h.Set("Authorization", "BEARER "+newJwtToken([]byte("foo"), Claims{}))
 	status, resp := testRequest(ts, "GET", "/", h, nil)
 	suite.Equal(401, status)
-	suite.Equal("no token found\n", resp)
+	suite.Equal("token is unauthorized\n", resp)
 }
 
 func (suite *ServiceTestSuite) TestWithCorrectKey() {

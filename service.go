@@ -1,12 +1,14 @@
+// Package jwtservice provides a standardized way to generate, verify, and authenticate JWT.
 package jwtservice
 
 import (
+	"net/http"
+	"time"
+
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/jwtauth/v5"
 	"github.com/lestrrat-go/jwx/v2/jwa"
 	"github.com/lestrrat-go/jwx/v2/jwt"
-	"net/http"
-	"time"
 )
 
 // Service defines the JWT service structure
@@ -16,6 +18,7 @@ type Service struct {
 	exp    time.Duration
 }
 
+// Auth returns jwtauth.JWTAuth
 func (s *Service) Auth() *jwtauth.JWTAuth {
 	return s.auth
 }
@@ -28,7 +31,6 @@ type ServiceOption func(*Service)
 
 // New create new JWT service
 func New(appKey string, opts ...ServiceOption) *Service {
-
 	// create default service
 	service := &Service{
 		appKey: []byte(appKey),
@@ -45,7 +47,6 @@ func New(appKey string, opts ...ServiceOption) *Service {
 
 // GenerateToken generate signed token
 func (s *Service) GenerateToken(claims Claims) (string, error) {
-
 	token := jwt.New()
 
 	claims[jwt.ExpirationKey] = time.Now().Add(s.exp).Unix()
@@ -63,6 +64,7 @@ func (s *Service) GenerateToken(claims Claims) (string, error) {
 	return string(tokenPayload), err
 }
 
+// ClaimsFromRequest parses token claims from request token
 func (s *Service) ClaimsFromRequest(r *http.Request) (map[string]any, error) {
 	_, claims, err := jwtauth.FromContext(r.Context())
 
