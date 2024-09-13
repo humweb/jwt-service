@@ -7,9 +7,11 @@
 [![go.mod](https://img.shields.io/github/go-mod/go-version/humweb/jwt-service)](go.mod)
 [![LICENSE](https://img.shields.io/github/license/humweb/jwt-service)](LICENSE)
 [![Go Report Card](https://goreportcard.com/badge/github.com/humweb/jwt-service)](https://goreportcard.com/report/github.com/humweb/jwt-service)
-## Description
 
-This is a GO JWT service that provides a standardized way to generate, verify, and authenticate JWT.
+---
+
+This is a GO JWT service that provides a standardized way to generate, verify, and authenticate JSON Web Tokens (JWT).
+
 ## Create Service
 You can initialize the service with just a secret in this case `123`.
 By default the token expires in 24 hours
