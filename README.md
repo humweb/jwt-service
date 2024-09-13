@@ -6,7 +6,7 @@
 [![codecov](https://codecov.io/gh/humweb/jwt-service/graph/badge.svg?token=IK9M2M8DYO)](https://codecov.io/gh/humweb/jwt-service)
 [![go.mod](https://img.shields.io/github/go-mod/go-version/humweb/jwt-service)](go.mod)
 [![LICENSE](https://img.shields.io/github/license/humweb/jwt-service)](LICENSE)
-[![Go Report Card](https://goreportcard.com/badge/github.com/humweb/jwt-service)](https://goreportcard.com/report/github.com/humweb/jwt-service)
+[![Report Card](https://goreportcard.com/badge/github.com/humweb/jwt-service)](https://goreportcard.com/report/github.com/humweb/jwt-service)
 
 ---
 
