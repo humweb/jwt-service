@@ -1,4 +1,4 @@
-module github.com/humweb/app-boilerplate/build
+module github.com/humweb/jwt-service/build
 
 go 1.22
 

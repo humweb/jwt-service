@@ -1,3 +1,6 @@
+run:
+  skip-files:
+    - ".*\\_test.go$"
 linters-settings:
   funlen:
     lines: 100
@@ -5,7 +8,7 @@ linters-settings:
   gocyclo:
     min-complexity: 15
   goimports:
-    local-prefixes: github.com/humweb/app-boilerplate
+    local-prefixes: github.com/humweb/jwt-service
   govet:
     shadow: true
   misspell:
@@ -16,7 +19,6 @@ linters-settings:
     require-specific: false # don't require nolint directives to be specific about which linter is being skipped
   revive:
     confidence: 0
-
 linters:
   disable-all: true
   enable:

@@ -2,8 +2,8 @@ SHELL := /bin/bash
 
 .DEFAULT_GOAL := all
 .PHONY: all
-all: ## build pipeline
-all: mod inst gen build spell lint test
+all: ## pipeline
+all: mod inst gen spell lint test
 
 .PHONY: precommit
 precommit: ## validate the branch before commit
@@ -40,11 +40,6 @@ inst: ## go install tools
 gen: ## go generate
 	$(call print-target)
 	go generate ./...
-
-.PHONY: build
-build: ## goreleaser build
-	$(call print-target)
-	goreleaser build --clean --single-target --snapshot
 
 .PHONY: spell
 spell: ## misspell

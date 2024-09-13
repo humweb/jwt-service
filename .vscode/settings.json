@@ -13,7 +13,7 @@
     },
     "go.useLanguageServer": true,
     "gopls": {
-        "formatting.local": "github.com/humweb/app-boilerplate",
+        "formatting.local": "github.com/humweb/jwt-service",
         "formatting.gofumpt": true
     },
     "go.lintTool": "golangci-lint",

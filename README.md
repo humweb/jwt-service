@@ -1,13 +1,13 @@
 # Go Repository Template
 
 [![Keep a Changelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog-%23E05735)](CHANGELOG.md)
-[![GitHub Release](https://img.shields.io/github/v/release/humweb/app-boilerplate)](https://github.com/humweb/app-boilerplate/releases)
-[![Go Reference](https://pkg.go.dev/badge/github.com/humweb/app-boilerplate.svg)](https://pkg.go.dev/github.com/humweb/app-boilerplate)
-[![go.mod](https://img.shields.io/github/go-mod/go-version/humweb/app-boilerplate)](go.mod)
-[![LICENSE](https://img.shields.io/github/license/humweb/app-boilerplate)](LICENSE)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/humweb/app-boilerplate/build.yml?branch=main)](https://github.com/humweb/app-boilerplate/actions?query=workflow%3Abuild+branch%3Amain)
-[![Go Report Card](https://goreportcard.com/badge/github.com/humweb/app-boilerplate)](https://goreportcard.com/report/github.com/humweb/app-boilerplate)
-[![codecov](https://codecov.io/gh/humweb/app-boilerplate/graph/badge.svg?token=TJZL21LFKC)](https://codecov.io/gh/humweb/app-boilerplate)
+[![GitHub Release](https://img.shields.io/github/v/release/humweb/jwt-service)](https://github.com/humweb/jwt-service/releases)
+[![Go Reference](https://pkg.go.dev/badge/github.com/humweb/jwt-service.svg)](https://pkg.go.dev/github.com/humweb/jwt-service)
+[![go.mod](https://img.shields.io/github/go-mod/go-version/humweb/jwt-service)](go.mod)
+[![LICENSE](https://img.shields.io/github/license/humweb/jwt-service)](LICENSE)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/humweb/jwt-service/build.yml?branch=main)](https://github.com/humweb/jwt-service/actions?query=workflow%3Abuild+branch%3Amain)
+[![Go Report Card](https://goreportcard.com/badge/github.com/humweb/jwt-service)](https://goreportcard.com/report/github.com/humweb/jwt-service)
+[![codecov](https://codecov.io/gh/humweb/jwt-service/graph/badge.svg?token=TJZL21LFKC)](https://codecov.io/gh/humweb/jwt-service)
 
 ⭐ `Star` this repository if you find it valuable and worth maintaining.
 
@@ -44,8 +44,8 @@ It includes:
 1. Sign up on [Codecov](https://codecov.io/) and configure
    [Codecov GitHub Application](https://github.com/apps/codecov).
 1. Click the `Use this template` button (alt. clone or download this repository).
-1. Replace all occurrences of `humweb/app-boilerplate` to `your_org/repo_name` in all files.
-1. Replace all occurrences of `app-boilerplate` to `repo_name` in [Dockerfile](Dockerfile).
+1. Replace all occurrences of `humweb/jwt-service` to `your_org/repo_name` in all files.
+1. Replace all occurrences of `jwt-service` to `repo_name` in [Dockerfile](Dockerfile).
 1. Follow [these](https://docs.codecov.com/docs/adding-the-codecov-token#github-actions)
    instructions to add the `CODECOV_TOKEN` GitHub Actions and Dependabot secret.
 1. Update the following files:
