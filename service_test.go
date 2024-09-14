@@ -18,13 +18,13 @@ type ServiceTestSuite struct {
 	suite.Suite
 }
 
-func (suite *ServiceTestSuite) TestServiceGetters() {
+func (suite *ServiceTestSuite) TestServiceGetterAuthGetter() {
 	service := New("123")
 	suite.Contains(reflect.ValueOf(service.Auth()).String(), "jwtauth.JWTAuth")
 
 }
 
-func (suite *ServiceTestSuite) TestSClaimsError() {
+func (suite *ServiceTestSuite) TestClaimsValueError() {
 	service := New("123")
 	var exp interface{}
 	token, err := service.GenerateToken(Claims{"aud": exp})
@@ -33,7 +33,7 @@ func (suite *ServiceTestSuite) TestSClaimsError() {
 	suite.NotNil(err)
 }
 
-func (suite *ServiceTestSuite) TestWithNoToken() {
+func (suite *ServiceTestSuite) TestRequestWithNoToken() {
 
 	_, _, ts := createService()
 	defer ts.Close()
@@ -45,7 +45,7 @@ func (suite *ServiceTestSuite) TestWithNoToken() {
 
 }
 
-func (suite *ServiceTestSuite) TestWithWrongKey() {
+func (suite *ServiceTestSuite) TestRequestWithWrongKey() {
 	_, _, ts := createService()
 	defer ts.Close()
 	h := http.Header{}
@@ -55,7 +55,7 @@ func (suite *ServiceTestSuite) TestWithWrongKey() {
 	suite.Equal("token is unauthorized\n", resp)
 }
 
-func (suite *ServiceTestSuite) TestWithCorrectKey() {
+func (suite *ServiceTestSuite) TestRequestWithCorrectKey() {
 	_, s, ts := createService()
 	defer ts.Close()
 
@@ -114,7 +114,7 @@ func (suite *ServiceTestSuite) TestOverrideOption() {
 	suite.Equal("welcome", resp)
 }
 
-func (suite *ServiceTestSuite) TestExpiredKey() {
+func (suite *ServiceTestSuite) TestRequestWithExpiredKey() {
 	service := New("123", WithExpiration(-24*time.Hour))
 	r := chi.NewRouter()
 
