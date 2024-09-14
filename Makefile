@@ -54,7 +54,7 @@ lint: ## golangci-lint
 .PHONY: vuln
 vuln: ## govulncheck
 	$(call print-target)
-	govulncheck ./...
+	govulncheck -show verbose ./...
 
 .PHONY: test
 test: ## go test

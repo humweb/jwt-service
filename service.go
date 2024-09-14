@@ -18,11 +18,6 @@ type Service struct {
 	exp    time.Duration
 }
 
-// Auth returns jwtauth.JWTAuth
-func (s *Service) Auth() *jwtauth.JWTAuth {
-	return s.auth
-}
-
 // Claims defines map for setting token claims
 type Claims map[string]any
 
@@ -43,6 +38,11 @@ func New(appKey string, opts ...ServiceOption) *Service {
 	}
 
 	return service
+}
+
+// Auth returns jwtauth.JWTAuth
+func (s *Service) Auth() *jwtauth.JWTAuth {
+	return s.auth
 }
 
 // GenerateToken generate signed token
