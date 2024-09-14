@@ -6,9 +6,8 @@
 [![codecov](https://codecov.io/gh/humweb/jwt-service/graph/badge.svg?token=IK9M2M8DYO)](https://codecov.io/gh/humweb/jwt-service)
 [![go.mod](https://img.shields.io/github/go-mod/go-version/humweb/jwt-service)](go.mod)
 [![LICENSE](https://img.shields.io/github/license/humweb/jwt-service)](LICENSE)
-[![Report Card](https://goreportcard.com/badge/github.com/humweb/jwt-service)](https://goreportcard.com/report/github.com/humweb/jwt-service)
+[![Code Report Card](https://goreportcard.com/badge/github.com/humweb/jwt-service)](https://goreportcard.com/report/github.com/humweb/jwt-service)
 
----
 
 This is a GO JWT service that provides a standardized way to generate, verify, and authenticate JSON Web Tokens (JWT).
 
